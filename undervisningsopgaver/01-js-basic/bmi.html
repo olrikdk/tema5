@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script>
+        let højde = prompt("angiv højde");
+        let vægt = prompt("angiv vægt");
+          /*Lav en funktion, areal, som med længde og
+bredde som parametre, kan udregne et areal,
+og returnere resultatet.*/
+
+        //let areal = længde * bredde;
+
+        function bmi(h, v){
+            return(v/(h * h/10000))
+
+        }
+        let resultat = `Din BMI er ${bmi(højde, vægt)}.Har du brug for et nyt areal?`;
+        confirm(resultat);
+
+        if(confirm){
+            location.reload();
+        }
+
+
+
+    </script>
+</body>
+</html>
