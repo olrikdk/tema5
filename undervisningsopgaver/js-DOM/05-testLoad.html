@@ -33,8 +33,15 @@ text-align: center;
 
 
     <script>
-        document.querySelector(".firkant").innerHTML = `<img src ="frog.png"  alt= "frø">`;
+
+        document.addEventListener("DOMContentLoaded", start);
+        function start() {
+            console.log("start");
+             document.querySelector(".firkant").innerHTML = `<img src ="frog.png"  alt= "frø">`;
         document.querySelector(".cirkel").innerHTML = `<img src ="gris.png" alt= "gris">`;
+        }
+
+
 
 
     </script>
