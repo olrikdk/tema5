@@ -18,16 +18,31 @@ og returnere resultatet.*/
         //let areal = længde * bredde;
 
         function bmi(h, v){
-            return(v/(h * h/10000))
+            (v/(h * h/10000))
 
         }
-        let resultat = `Din BMI er ${bmi(højde, vægt)}.Har du brug for et nyt areal?`;
+
+
+        let resultat = `Din BMI er ${bmi(højde, vægt)}.Har du brug for et nyt BMI?`;
         confirm(resultat);
 
         if(confirm){
             location.reload();
         }
 
+/*let resultat;
+
+
+        if (bmi<19){ resultat ="BMI er ${bmi}.Du er UNDERVÆGTIG";  }
+
+         if (bmi >=20 && bmi <25){ resultat ="BMI er ${bmi}.Du er NORMAL";  }
+
+if (bmi >25 && < 30 ){  resultat ="BMI er ${bmi}.Du er OVERVÆGTIG";  }
+        if (bmi >30 && < 35 ){  resultat ="BMI er ${bmi}.Du er FED";  }
+        if (bmi >35 && < 40 ){  resultat ="BMI er ${bmi}.Du er SVÆRT FED";  }
+        if (bmi >40 ){  resultat ="BMI er ${bmi}.Du er EKSTREMT FED";  }
+
+        console.log(resultat);*/
 
 
     </script>

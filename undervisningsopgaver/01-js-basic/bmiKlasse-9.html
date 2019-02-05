@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script>
+        let højde = prompt("angiv højde");
+        let vægt = prompt("angiv vægt");
+
+
+        //let areal = længde * bredde;
+
+        function bmi(h, v){
+            let bmi= (v/(h * h/10000));
+
+
+        let resultat;
+
+
+        if (bmi<19){ resultat ="BMI er ${bmi(højde, vægt)}.Du er UNDERVÆGTIG";  }
+
+         if (bmi >=20 && bmi <25){ resultat ="BMI er ${bmi}.Du er NORMAL";  }
+
+if (bmi >25 && < 30 ){  resultat ="BMI er ${bmi(højde, vægt)}.Du er OVERVÆGTIG";  }
+        if (bmi >30 && < 35 ){  resultat ="BMI er ${bmi(højde, vægt)}.Du er FED";  }
+        if (bmi >35 && < 40 ){  resultat ="BMI er ${bmi(højde, vægt)}.Du er SVÆRT FED";  }
+        if (bmi >40 ){  resultat ="BMI er ${bmi(højde, vægt)}.Du er EKSTREMT FED";  }
+
+              }
+
+        console.log(resultat);
+
+
+
+
+    </script>
+</body>
+</html>
