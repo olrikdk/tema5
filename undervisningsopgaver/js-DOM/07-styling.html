@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .firkant{
+            height: 100px;
+            width: 100px;
+line-height: 100px;
+
+text-align: center;
+            background: green;
+
+        }
+        .cirkel{
+              height: 100px;
+            width: 100px;
+line-height: 100px;
+border-radius: 50%;
+text-align: center;
+            background: red;
+
+        }
+    </style>
+</head>
+
+<body>
+   <div class="firkant"></div>
+   <div class ="cirkel"></div>
+
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", start);
+        function start() {
+            console.log("start");
+            let firkant = document.querySelector(".firkant");
+            let cirkel = document.querySelector(".cirkel");
+
+             firkant.innerHTML = `<img src ="frog.png"  alt= "frø">`;
+        cirkel.innerHTML = `<img src ="gris.png" alt= "gris">`;
+
+
+
+                firkant.addEventListener("click",overhop);
+                cirkel.addEventListener("click",tilbage);
+                function overhop(){
+                    cirkel.style.position="absolute";cirkel.style.top="8px";
+                }
+                function tilbage(){
+                    cirkel.style.position="static";
+                }
+            }
+
+
+    </script>
+</body>
+</html>
