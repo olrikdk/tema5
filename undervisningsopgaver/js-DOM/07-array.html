@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            color:burlywood;
+
+        }
+        #display{
+            width: 20vw;
+            height: 20vw;
+            border: 1px solid silver;
+            margin 7vw;
+            padding: 1vw;
+        }
+
+    </style>
+</head>
+
+<body>
+   <div id="display"></div>
+
+</body>
+
+<script>
+    let playlist = ["Dancing in the street", "Stressed Out", "Space Oddity", "House of the rising sun", "Feel Good","Mambo Yma Sumac","Guilty","Hverdagsjunkie","Blaffersangen","Bohemian Rapsody"];
+    playlist.forEach(sang => {
+        document.querySelector("#display").innerHTML += `${sang} <br>`;
+    })
+
+    </script>
+</html>
