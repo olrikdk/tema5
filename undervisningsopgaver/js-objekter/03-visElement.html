@@ -9,12 +9,7 @@
 
 <body>
     <div id="dyr">
-       <div>
-        <h3></h3>
-        <p> type: </p>
-        <h5></h5>
-        <img src="" alt="">
-        </div>
+
     </div>
 </body>
 <script>
@@ -24,15 +19,13 @@
     let dyr= {
         "navn":"piggy",
         "art":"gris",
-        "levested":"svinefarm",
+        "levested":"svinefarme",
         "billede":"gris.png"
     };
 
     let dest = document.querySelector("#dyr");
-    dest.querySelector("h3").textContent = dyr.navn;
-    dest.querySelector("p").textContent = dyr.art;
-    dest.querySelector("img").src = dyr.billede;
-    dest.querySelector("h5").textContent = dyr.levested;
+    dest.innerHTML=`Navn: ${dyr.navn} og arten er: ${dyr.art} og lever idag på ${dyr.levested}`;
+
 
     </script>
 </html>

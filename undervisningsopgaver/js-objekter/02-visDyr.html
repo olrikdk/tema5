@@ -4,35 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href=""><style></style><script src=""></script>
+
+    <link rel="stylesheet" href="">
+    <style></style>
+
 </head>
 
 <body>
     <div id="dyr">
-       <div>
-        <h3></h3>
-        <p> type: </p>
-        <h5></h5>
-        <img src="" alt="">
-        </div>
+
     </div>
 </body>
 <script>
+    //window.addEventListener("load", start);
 
-     //window.addEventListener("load", start);
-
-    let dyr= {
-        "navn":"piggy",
-        "art":"gris",
-        "levested":"svinefarm",
-        "billede":"gris.png"
+    let dyr = {
+        "navn": "piggy",
+        "art": "gris",
+        "levested": "svinefarme",
+        "billede": "gris.png"
     };
-
+document.addEventListener("DOMContentLoaded", start);
+    function start(){
     let dest = document.querySelector("#dyr");
-    dest.querySelector("h3").textContent = dyr.navn;
-    dest.querySelector("p").textContent = dyr.art;
-    dest.querySelector("img").src = dyr.billede;
-    dest.querySelector("h5").textContent = dyr.levested;
-
-    </script>
+    dest.innerHTML = `Navn: ${dyr.navn} og arten er: ${dyr.art} og lever idag på ${dyr.levested}`;
+    dest.innerHTML += `<br><"${dyr.billede}" alt=${dyr.navn}`>;
+    }
+</script>
 </html>
