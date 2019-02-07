@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="">
+    <style>
+        .dyr{ border:   ;
+        }
+        #liste {
+            display:grid;
+            grid-column: 1fr 1fr;
+        }
+    /*1 fr 1 fr = 2 columns*/
+    </style>
+
+</head>
+
+<body>
+    <div id="liste">
+
+    </div>
+</body>
+<script>
+    //window.addEventListener("load", start);
+
+    let dyr= [
+        {"navn":"piggy","type":"gris","levested":"svinefarm","billede":"gris.png"}
+        {"navn":"mikkel","type":"fox","levested":"skoven","billede":"fox.png"}
+        {"navn":"frede","type":"frog","levested":"vandhul","billede":"frog.png"}
+        {"navn":"cecilie","type":"menneske","levested":"overalt","billede":"fotom2.png"}
+    ]
+    document.addEventListener("DOMContentLoaded" start);
+
+    let dest= document.querySelector("#liste")
+    function visDyr(){
+        dyr.forEach(dyr=>{
+            dest.innerHTML +=`
+                <div class="dyr">
+                    <h3>${dyr.navn} ${dyr.type}</h3>
+            <p>levested:${dyr.levested}</p>
+    </div>
+`;
+        })
+    }
+
+    //slet ikke færdig - tjek github
+
+
+</script>
+</html>

@@ -9,23 +9,27 @@
 
 <body>
     <div id="dyr">
-
+        <h3></h3>
+        <p> type: </p>
+        <img src="" alt="">
+        <h5></h5>
     </div>
 </body>
 <script>
 
-     //window.addEventListener("load", start);
-
     let dyr= {
         "navn":"piggy",
         "art":"gris",
-        "levested":"svinefarme",
+        "levested":"svinefarm",
         "billede":"gris.png"
     };
-
+docement.addEventListener("DOMContentLoaded" start);
+    function start() {
     let dest = document.querySelector("#dyr");
-    dest.innerHTML=`Navn: ${dyr.navn} og arten er: ${dyr.art} og lever idag på ${dyr.levested}`;
-
-
+    dest.querySelector("h3").textContent = dyr.navn;
+    dest.querySelector("p").textContent = dyr.art;
+    dest.querySelector("img").src = dyr.billede;
+    dest.querySelector("h5").textContent = dyr.levested;
+}
     </script>
 </html>
