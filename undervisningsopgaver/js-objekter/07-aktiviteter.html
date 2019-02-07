@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>roskildeevent</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #liste {
+            display: grid;
+            grid-column: 1fr 1fr;
+            width: 90vw;
+            height: 100vw;
+            border: 1px solid silver;
+            margin: 7vw;
+            padding: 1vw;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="liste">
+
+    </div>
+
+</body>
+<script>
+        let alleEvent = [{
+                "begivenhed": "sygefravær",
+                "billede": "https://dit-roskilde.dk/wp-content/uploads/2019/02/Vaccination-vaccine-læge-forkølelse-abw-200x150.jpg"
+            },
+            {
+                "begivenhed": "naturfredning",
+                "billede": "https://dit-roskilde.dk/wp-content/uploads/2018/06/IMG_2516-200x150.jpg"
+            },
+            {
+                "begivenhed": "rehabilitering",
+                "billede": "https://dit-roskilde.dk/wp-content/uploads/2019/01/fitness-sport-træning-vægte-motion-abw-7-200x150.jpg"
+            },
+            {
+                "begivenhed": "skolevalg",
+                "billede": "https://dit-roskilde.dk/wp-content/uploads/2017/09/abw-valg-din-stemme-er-vigtig2-200x150.jpg"
+            } {
+                "begivenhed": "opvaskerglæde",
+                "billede": "https://dit-roskilde.dk/wp-content/uploads/2018/04/abw-nyt-jobsøgning-200x150.jpg",
+
+            }
+        ];
+
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            let dest = document.querySelector("#liste");
+            alleEvent.forEach(event => {
+                dest.innerHTML += `
+	                        ${event.begivenhed} <br>, ${event.billede}
+	                    `;
+            })
+        }
+
+
+    </script>
+</html>
