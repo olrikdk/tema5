@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>js-oevelse-1</title>
+    <style>
+        body {
+            color: burlywood;
+        }
+        #gris {
+            width: 30vw;
+            height: 30vw;
+            border: 1px solid silver;
+            margin: 7vw;
+            padding: 1vw;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="liste">
+    </div>
+    <script>
+        let allDyr = {
+            "navn": "Pelle",
+            "type": "gris",
+            "billede": "http://helf-kea.dk/test/gris.png",
+            "levested": "Grisefarm"
+        };
+        document.querySelector("#gris");
+        const fuldeNavn = `${gris.navn} ${gris.type}`;
+        destination.querySelector("h3").textContent = fuldeNavn;
+        destination.querySelector("p").textContent = gris.levested;
+        destination.querySelector("img").src = gris.billede;
+    </script>
+
+</body>
+
+</html>
