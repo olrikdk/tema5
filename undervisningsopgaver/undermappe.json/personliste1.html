@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 	<html>
 	    <head>
-    <title>Personliste</title>
+    <title>Visdyr</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         #liste {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            background-color: #f24a4a;
-            border: 10px solid #2b147b;
+            background-color: antiquewhite;
+
+            border: 1px solid silver;
             margin: 7vw;
             padding: 1vw;
-            grid-gap: 10px;
 
         }
 
@@ -21,21 +21,18 @@
             height: 120px;
         }
         img{
+
             width:200px;
-        }
-        h3{
-            font-size: 36px;
-            font-style: bold;
         }
     </style>
 
 </head>
 
 <body>
-
-   <h3><center>Personliste. <br>KEA multimedie 2.semester 2019</center></h3>
     <div id="liste">
-
+        <h3></h3>
+        <p></p>
+       <div class="images"> <img src="" alt=""></div>
 
     </div>
     <script>
@@ -57,11 +54,12 @@
                 alleDyr.forEach(dyr => {
                     dest.innerHTML += `
                                 <div class="dyr">
-                                <h2>${dyr.navn} <br></h2>
+                                <h2>${dyr.navn}<br></h2>
                                 <p> Githubnavn: ${dyr.github} <br></p>
+<p>Alder: ${dyr.alder}<br></p>
 <p>Email: ${dyr.email}<br></p>
-<img src="${dyr.billede}" alt="mangler foto">
-<p>Hold: ${dyr.hold} ${dyr.alder}år Køn: ${dyr.køn}
+<img src="${dyr.billede}" alt="dyr.navn">
+<p>Går på hold: ${dyr.hold} Køn: ${dyr.køn}
 
                                 </div> `
                 })
