@@ -5,15 +5,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+
+           body {
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Poppins', sans-serif;
+        }
+
         #liste {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+             margin: 7vw;
+
             background-color: #f24a4a;
             border: 10px solid #2b147b;
-            margin: 7vw;
+
             padding: 1vw;
             grid-gap: 10px;
 
+        }
+        .vis {
+            border-bottom: 1px solid #2b147b;
+            margin: 20px 0;
+            padding: 0 20px 20px;
+            width: 70vw;
+            display: flex;
+            align-items: center;
         }
 
         .images{
@@ -36,8 +52,8 @@
    <h3><center>Personliste. <br>KEA multimedie 2.semester 2019</center></h3>
     <div id="liste">
 
-
     </div>
+
     <script>
         let alleDyr = [];
         document.addEventListener("DOMContentLoaded", start);
@@ -56,6 +72,7 @@
 
                 alleDyr.forEach(dyr => {
                     dest.innerHTML += `
+<div class="vis">
                                 <div class="dyr">
                                 <h2>${dyr.navn} <br></h2>
                                 <p> Githubnavn: ${dyr.github} <br></p>
@@ -63,7 +80,7 @@
 <img src="${dyr.billede}" alt="mangler foto">
 <p>Hold:${dyr.hold} ${dyr.alder} år (${dyr.køn})</p>
 
-                                </div> `
+                               </div> </div> `
                 })
 
             }
