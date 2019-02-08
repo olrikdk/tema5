@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+	<html>
+	    <head>
+    <title>Visdyr</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #liste {
+            display: grid;
+            grid-column: 1fr 1fr 1fr;
+            width: 40vw;
+            height: 60vw;
+            border: 1px solid silver;
+            margin: 7vw;
+            padding: 1vw;
+            object-fit: contain;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="liste">
+        <h3></h3>
+        <p></p>
+        <img src="" alt="">
+
+    </div>
+    <script>
+        let alleDyr = [];
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            let dest = document.querySelector("#liste");
+
+            async function getJson() {
+                let jsonData = await fetch("person.json");
+                alleDyr = await jsonData.json();
+                console.log("alleDyr ", alleDyr);
+                visDyr();
+            }
+
+            function visDyr() {
+
+                alleDyr.forEach(dyr => {
+                    dest.innerHTML += `
+                                <div class="dyr">
+                                <h3>${dyr.navn}<br></h3>
+                                <p> Githubnavn: ${dyr.github} <br></p>
+<p>Alder: ${dyr.alder}<br></p>
+<p>Email: ${dyr.email}<br></p>
+<img src="${dyr.billede}" alt="dyr.navn">
+
+                                </div> `
+                })
+
+            }
+            getJson();
+        }
+    </script>
+</body>
+	</html>
