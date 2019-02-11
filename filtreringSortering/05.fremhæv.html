@@ -45,6 +45,9 @@
             font-size: 36px;
             font-style: bold;
         }
+        h1{
+           align-items: center;
+        }
 
         .menu {
             display: flex;
@@ -53,7 +56,7 @@
 
         }
 
-        .filter{
+        .filter {
             height: 40px;
             width: 120px;
             font-family: "times";
@@ -61,11 +64,10 @@
             background-color: beige;
 
         }
-        .valgt{
+
+        .valgt {
             background-color: red;
         }
-
-
     </style>
 
 </head>
@@ -75,13 +77,13 @@
     <h3>
         <center>Personliste. KEA multimedie 2.semester 2019</center>
     </h3>
-    <h1></h1>
+    <div class="menu"><h1></h1></div>
 
     <div class="menu">
 
         <button class="filter valgt" data-hold="alle">Alle</button>
-        <button class="filter" data-hold="a">Hold A</button>
-      <button class="filter" data-hold="b">Hold B</button>
+        <button class="filter valgt" data-hold="a">Hold A</button>
+        <button class="filter valgt" data-hold="b">Hold B</button>
 
     </div>
     <div id="liste">
@@ -104,11 +106,11 @@
             }
 
             function visPersoner() {
-                dest.innerHTML="";
+                dest.innerHTML = "";
                 personer.forEach(person => {
-                    if(filter=="alle" || filter == person.hold){
-                    dest.innerHTML +=
-                 `
+                    if (filter == "alle" || filter == person.hold) {
+                        dest.innerHTML +=
+                            `
                                 <div class="vis">
                                 <div class="person">
                                 <h2>${person.navn} <br></h2>
@@ -126,14 +128,19 @@
 
             // function visPersoner slut
 
-            document.querySelectorAll(".filter").forEach(elm =>{
+            document.querySelectorAll(".filter").forEach(elm => {
                 elm.addEventListener("click", filtrering);
             })
-            function filtrering(){
-            filter= this.getAttribute("data-hold");
-                document.querySelector("h1".textContent)= this.textContent;
-            visPersoner();
-        }
+
+            function filtrering() {
+                filter = this.getAttribute("data-hold");
+                document.querySelector("h1").textContent = this.textContent;
+                document.querySelectorAll(".filter").forEach(elm =>{
+                    elm.classList.remove("valgt");
+                })
+                this.classList.add("valgt");
+                visPersoner();
+            }
             getJson();
         }
     </script>
