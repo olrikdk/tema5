@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+	<html>
+	    <head>
+    <title>Personliste</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin: 0 auto;
+
+            background-color: #f24a4a;
+            border: 10px solid #2b147b;
+
+            padding: 1vw;
+            grid-gap: 10px;
+
+        }
+
+        .vis {
+
+            background-color: white;
+            width: 90%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: auto;
+            padding: 1vw;
+            margin: 1vw auto;
+            border-radius: 1%;
+            box-shadow: rgba(0, 0, 0, .35) 0 1rem 1rem 0;
+            border-radius: .8rem;
+        }
+
+        .images {
+            width: 100px;
+            height: 120px;
+        }
+
+        img {
+            width: 200px;
+        }
+
+        h3 {
+            font-size: 36px;
+            font-style: bold;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+
+        }
+
+        .filter{
+            height: 40px;
+            width: 120px;
+            font-family: "times";
+            font-size: 18px;
+            background-color: beige;
+
+        }
+        .valgt{
+            background-color: red;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <h3>
+        <center>Personliste. KEA multimedie 2.semester 2019</center>
+    </h3>
+
+    <div class="menu">
+
+        <button class="filter valgt" data-hold="alle">Alle</button>
+        <button class="filter" data-hold="a">Hold A</button>
+      <button class="filter" data-hold="b">Hold B</button>
+
+    </div>
+    <div id="liste">
+
+
+    </div>
+    <script>
+        let personer = [];
+        let filter = "alle";
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            let dest = document.querySelector("#liste");
+
+            async function getJson() {
+                let jsonData = await fetch("person.json");
+                personer = await jsonData.json();
+                console.log("personer", personer);
+                visPersoner();
+            }
+
+            function visPersoner() {
+                dest.innerHTML="";
+                personer.forEach(person => {
+                    if(filter=="alle" || filter == person.hold){
+                    dest.innerHTML +=
+                 `
+                                <div class="vis">
+                                <div class="person">
+                                <h2>${person.navn} <br></h2>
+                                <p> Githubnavn: ${person.github} <br></p>
+                                <p>Email: ${person.email}<br></p>
+                                <img src="${person.billede}" alt="mangler foto">
+                                <p> ${person.alder}år Køn: ${person.køn}
+
+                               </div> </div> `;
+                    }
+                })
+
+
+            }
+
+            // function visPersoner slut
+
+            document.querySelectorAll(".filter").forEach(elm =>{
+                elm.addEventListener("click", filtrering);
+            })
+            function filtrering(){
+            filter= this.getAttribute("data-hold");
+            visPersoner();
+        }
+            getJson();
+        }
+    </script>
+</body>
+	</html>
