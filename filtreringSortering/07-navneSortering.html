@@ -102,6 +102,10 @@
             async function getJson() {
                 let jsonData = await fetch("person.json");
                 personer = await jsonData.json();
+                personer.sort((a, b) => {
+return a.navn.localeCompare(b.navn);
+})
+
                 console.log("personer", personer);
                 visPersoner();
             }
@@ -115,10 +119,10 @@
                                 <div class="vis">
                                 <div class="person">
                                 <h2>${person.navn} <br></h2>
-                                <p> Githubnavn: ${person.github} <br></p>
-                                <p>Email: ${person.email}<br></p>
+
+
                                 <img src="${person.billede}" alt="mangler foto">
-                                <p> ${person.alder}år Køn: ${person.køn}
+                                <p> ${person.alder}år
 
                                </div> </div> `;
                     }
