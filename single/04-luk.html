@@ -12,14 +12,17 @@
 	            padding: 0;
 	        }
 
-	        img {
-	            max-height: 150px;
-	        }
+
+
+        img {
+            width: 300px;
+        }
 
 	        .person {
-	            background-color: antiquewhite;
+	            background-color: white;
 	            border: 1px solid black;
-	            max-width: 1200px;
+	            max-width:400px;
+                border-radius: 1em;
 	        }
 
 	       #liste {
@@ -28,6 +31,7 @@
             margin: 0 auto;
             background-color: #f24a4a;
             border: 10px solid #2b147b;
+               border-radius: 0.4em;
  padding: 1vw;
             grid-gap: 20px;
 
@@ -38,13 +42,11 @@
             font-size: 18px;
             background-color: white;
             width: 90%;
-            align-items: auto;
+            align-items:auto;
             padding: 1vw;
             margin: 1vw auto;
-            border-radius: 1%;
-            box-shadow: rgba(0, 0, 0, .35) 0 1rem 1rem 0;
-            border-radius: .8rem;
-
+          box-shadow: rgba(0, 0, 0, .35) 0 1rem 1rem 0;
+            border-radius: 1rem;
 
         }
 
@@ -52,15 +54,22 @@
 	        .menu {
                 display: flex;
 	            text-align: center;
-	            margin-bottom: 20px;
-                padding: 10px;
-                margin:10px;
+                display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+	            margin-bottom: 2px;
+                padding: 1px;
+                margin:1px;
 	        }
 
 	        h1 {
 	            text-align: center;
 	            margin-bottom: 20px;
 	        }
+
+            h2{
+                text-align: center;
+
+            }
 
 	        .valgt {
 	            background-color: red;
@@ -71,13 +80,13 @@
 	            width: 100vw;
 	            height: 100vh;
 	            position: fixed;
-	            background-color: rgba(0, 255, 255, 0.29);
+	            background-color: rgba(0, 2, 250, 0.29);
 	            display: none;
 	            overflow: scroll;
 	        }
 
 	        #indhold {
-	            min-height: 50vh;
+	           height: 50vh;
 	            background-color: white;
 	            width: 70vw;
 	            margin: 4rem auto;
@@ -90,7 +99,8 @@
 
 	        #luk {
 	            position: fixed;
-	            right: 2rem;
+	            right: 20rem;
+                top: 5em;
 	        }
 
 	        #luk button {
@@ -113,6 +123,8 @@
 	</head>
 
 	<body>
+
+
 	    <div id="popup">
 	        <div id="luk">
 	            <button>X</button>
@@ -122,8 +134,8 @@
 
 
 	    <header>
-	        <h1>Alle</h1>
-
+	   <h2>Personliste. KEA Multimediedesign 2.semester. 2019</h2>
+<h1></h1>
 	        <nav class="menu">
 	            <button class="filter valgt" data-hold="alle">Alle</button>
 	            <button class="filter valgt" data-hold="a">Hold A</button>
@@ -162,10 +174,9 @@
 	<h2>${personer.navn}</h2>
 	<img src="${personer.billede}">
 	<br>
-	<a href="https://github.com/${personer.github}"> GitHub </a>
-	<p>Alder: ${personer.alder}</p>
-	<p>Køn: ${personer.køn}</p>
-	<p>Hold: ${personer.hold}</p>
+<p>Github: ${personer.github}</p>
+	<p>Alder: ${personer.alder}   &nbsp;&nbsp;  Køn: ${personer.køn}  &nbsp;&nbsp;   Hold: ${personer.hold}</p>
+
 	</article>`;
 	                        dest.insertAdjacentHTML("beforeend", template);
 	                        dest.lastElementChild.addEventListener("click", () => {
