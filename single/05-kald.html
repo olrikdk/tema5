@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+	<html lang="da">
+
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Personliste</title>
+	    <style>
+
+	        body {
+	            margin: 0;
+	            padding: 0;
+	        }
+
+
+
+        img {
+            width: 300px;
+        }
+
+	        .person {
+	            background-color: white;
+	            border: 1px solid black;
+	            max-width:400px;
+                border-radius: 1em;
+	        }
+
+	       #liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin: 0 auto;
+            background-color: #f24a4a;
+            border: 10px solid #2b147b;
+               border-radius: 0.4em;
+ padding: 1vw;
+            grid-gap: 20px;
+
+        }
+
+            .filter {
+            font-family: "helvetica";
+            font-size: 18px;
+            background-color: white;
+            width: 90%;
+            align-items:auto;
+            padding: 1vw;
+            margin: 1vw auto;
+          box-shadow: rgba(0, 0, 0, .35) 0 1rem 1rem 0;
+            border-radius: 1rem;
+
+        }
+
+
+	        .menu {
+                display: flex;
+	            text-align: center;
+                display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+	            margin-bottom: 2px;
+                padding: 1px;
+                margin:1px;
+	        }
+
+	        h1 {
+	            text-align: center;
+	            margin-bottom: 20px;
+	        }
+
+            h2{
+                text-align: center;
+
+            }
+
+	        .valgt {
+	            background-color: red;
+	        }
+
+	        #popup {
+	            top: 0;
+	            width: 100vw;
+	            height: 100vh;
+	            position: fixed;
+	            background-color: rgba(0, 2, 250, 0.29);
+	            display: none;
+	            overflow: scroll;
+	        }
+
+	        #indhold {
+	           height: 50vh;
+	            background-color: white;
+	            width: 70vw;
+	            margin: 4rem auto;
+	        }
+
+            .button{
+                width: 30px;
+                height: 20px;
+            }
+
+	        #luk {
+	            position: fixed;
+	            right: 20rem;
+                top: 5em;
+	        }
+
+	        #luk button {
+	            font-size: 2rem;
+	            padding: 1rem 2rem;
+	        }
+	 @media only screen and (min-width:600px) {
+	            #liste {
+	                grid-template-columns: repeat(2, 1fr);
+	            }
+	        }
+
+	        @media only screen and (min-width:868px) {
+	            #liste {
+	                grid-template-columns: repeat(3, 1fr);
+	            }
+	        }
+
+	    </style>
+	</head>
+
+	<body>
+
+
+	    <div id="popup">
+	        <div id="luk">
+	            <button>X</button>
+	        </div>
+	        <div id="indhold"></div>
+	    </div>
+
+
+	    <header>
+	   <h2>Personliste. KEA Multimediedesign 2.semester. 2019</h2>
+<h1></h1>
+	        <nav class="menu">
+	            <button class="filter valgt" data-hold="alle">Alle</button>
+	            <button class="filter valgt" data-hold="a">Hold A</button>
+	            <button class="filter valgt" data-hold="b">Hold B</button>
+	        </nav>
+	    </header>
+
+	        <section id="liste"></section>
+
+
+
+
+	    <script>
+	        let allePersoner = [];
+	        let filter = "alle";
+	        document.addEventListener("DOMContentLoaded", start);
+	        console.log(hentJson);
+
+	        function start() {
+	            let dest = document.querySelector("#liste");
+	            async function hentJson() {
+	                const myJson = await fetch("person.json");
+	                allePersoner = await myJson.json();
+	                allePersoner.sort((a, b) => {
+	                    return (a.alder - b.alder);
+	                });
+	                visPersoner();
+	            }
+
+	            function visPersoner() {
+	                dest.innerHTML = "";
+	                allePersoner.forEach(personer => {
+	                    if (filter == "alle" || filter == personer.hold) {
+	                        let template = `
+	<article class="person">
+	<h2>${personer.navn}</h2>
+	<img src="${personer.billede}">
+	<br>
+<p>Github: ${personer.github}</p>
+	<p>Alder: ${personer.alder}   &nbsp;&nbsp;  Køn: ${personer.køn}  &nbsp;&nbsp;   Hold: ${personer.hold}</p>
+
+	</article>`;
+	                        dest.insertAdjacentHTML("beforeend", template);
+	                        dest.lastElementChild.addEventListener("click", () => {
+	                            visSingle(personer);
+	                        });
+	                    }
+	                })
+	            }
+	            hentJson();
+	            document.querySelectorAll(".filter").forEach(but => {
+	                but.addEventListener("click", filtrering);
+	            })
+
+	            function filtrering() {
+	                document.querySelector("h1").textContent = this.textContent;
+	                filter = this.getAttribute("data-hold");
+	                console.log(filter);
+	                visPersoner();
+	                document.querySelectorAll(".filter").forEach(but => {
+	                    but.classList.remove("valgt");
+	                });
+	                this.classList.add("valgt");
+	            }
+	        }
+
+	        function visSingle(personer) {
+	            document.querySelector("#indhold").innerHTML = `
+	<article class="person">
+	<h2>${personer.navn}</h2>
+	<img src="${personer.billede}">
+	<br>
+	<p>Alder: ${personer.alder}</p>
+	<h3>${personer.navn}'s historie </h3>
+	<p>${personer.historie}</p>
+	<p>Mail: ${personer.email}</p>
+	</article>`;
+	            document.querySelector("#popup").style.display = "block";
+	        }
+
+	    </script>
+	</body>
+
+	</html>
