@@ -9,3 +9,7 @@ Derudover har jeg placeret book bord og find os nederst på side 1. (Book bord e
 Side 2 er så a la carte menuen (som vi lavede til bistro babushka også)
 
 
+Mit site er: http://cecilieolrik.com/kea/dengulevest/
+
+
+
