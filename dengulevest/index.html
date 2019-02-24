@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeGiletJaune</title>
+   <link rel="stylesheet" href="stylesheet.css"><style></style>
+</head>
+
+<body>
+<div class="topnav">
+            <a href="index.html#banner">Forside</a>
+            <a href="index.html#bookbord">Book Bord</a>
+            <a href="index.html#bookbord">Find os</a>
+            <a href="alacarte.html">A la carte</a>
+
+        </div>
+    <div id="banner"></div>
+
+    <header>
+  <section class="fotos">
+     <div class="box a"><strong>Le Gilet Jaune</strong> (Den Gule Vest)
+  <br>
+  Luksus middag alle har råd til. Ved at køre med 3 faste ugentlige menuer, er vi istand til at tilbyde en unik aften på en af vores fornemme restauranter - uanset hvad siddende regeringer har reduceret din indtægt til..</div>
+  <div class="box c">De franske <strong>Gilet Jaunes</strong><br>
+  En folkebevægelse gik i 2018 ud i de franske gader og protestrede over den stigende økonomiske ulighed, der også kendetegner Danmark. En omfordeling de rigeste faktisk ikke har bedt de populistiske politikere om. </div>
+
+
+  </section>
+
+
+        <section class="fotos">
+           <div class="gallery"><img src="pics/Scallops.jpg" alt="scallops"></div>
+            <div class="gallery"><img src="pics/germanriesling.jpg" alt="hvidvin"></div>
+            <div class="gallery"><img src="pics/frølår.jpg" alt="frølår"></div>
+
+            <div class="gallery"><img src="gulrestau.jpg" alt="rødvin"></div>
+            <div class="gallery"><img src="pics/redwine1.jpg" alt="rødvin"></div>
+             <div class="gallery"><img src="pics/coqauvin.jpg" alt="rødvin"></div>
+            <div class="gallery"><img src="pics/cremebrulee.jpg" alt="creme brulee"></div>
+        </section>
+
+        <section id="menuvalg">
+        <div class="menuerne">
+
+        <button class="menuerne"><a href="index.html.150">150 kr</a></button>
+        <button class="menuerne"><a href="index.html#tremenu">200 kr</a></button>
+        <button class="menuerne"><a href="index.html#tremenu">300 kr</a></button>
+        <button class="menuerne"><a href="alacarte.html">a la carde</a></button>
+
+</div>
+        </section>
+
+        <section id="tremenu">
+          <h1><center>Menuerne</center></h1>
+
+        <div id="ugemenuer">
+
+        <div class="ugens">
+           <div class="150">
+            <img src="menu150.jpg" alt="menulogo">
+            Delikat løgsuppe. <br>
+           Iskold hvidvin fra carmaque<br>
+            Coq au vin<br>
+           1984 Rolier Bourdaux <br>
+           kaffe<br>
+            Bon Apetit<br></div>
+        </div>
+        <div class="ugens menu200">
+           <img src="menu200.jpg" alt="menulogo">
+              Delikat løgsuppe. <br>
+           Iskold hvidvin fra carmaque<br>
+            Coq au vin<br>
+           1984 Rolier Bourdaux <br>
+            Klassiske franske citrontærte
+         Kaffe med Petit four<br>
+            Bon Apetit<br>
+
+        </div>
+        <div class="ugens menu300">
+           <img src="menu300.jpg" alt="menulogo">
+            Ægte fransk aperitif og lidt snacks <br>
+                  Delikat løgsuppe. <br>
+                  Udsøgt kammusling
+           Iskold hvidvin fra carmaque<br>
+            Coq au vin<br>
+           1984 Rolier Bourdaux <br>
+            Klassiske franske citrontærte
+            Dessertvin
+         Kaffe med Petit four<br>
+
+            Bon Apetit<br>
+        </div>
+
+        </div>
+        </section>
+
+
+    </header>
+
+
+
+    <footer>
+<section id="bookbord">
+    <div class="adresse">
+       <h3>Find os:
+       </h3>
+       <div></div>
+       <div>
+       <p>Bastilliegade 11<br>
+       1263 KBH K<br>
+       mobil: 0045 2381942</p></div>
+        <div><img src="map.jpg" alt="kort"></div>
+
+    </div>
+    <div class="adresse">
+    For reservationer over 8 gæster, venligst kontakt os på: 23819421
+    <div>
+        Antalt personer
+    </div>
+    <div>Ønsket dato</div></div>
+</section>
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        let alleRetter = [];
+        let filter = "alle";
+        const dest = document.querySelector("#liste");
+        async function start() {
+            const myJson = await fetch("retter.json");
+            alleRetter = await myJson.json();
+            alleRetter.sort((a, b) => {
+                return a.navn.localeCompare(b.navn)
+            });
+            visRet();
+        }
+        //        document.addEventListener("DOMContentLoaded", start);
+        function visRet() {
+            dest.innerHTML = "";
+            alleRetter.forEach(ret => {
+                if (filter == "alle" || filter == ret.kategori) {
+                    let template = `
+                    <div class="visindhold">
+                    <img src= ${ret.billede} alt=${ret.navn}><br>
+                    <h2>${ret.navn}</h2> <br>
+<p>${ret.kort}</p>
+  <h3>Pris: ${ret.pris},-</h3>
+                     <br>
+
+                    </div>`;
+                    dest.insertAdjacentHTML("beforeend", template);
+                    dest.lastElementChild.addEventListener("click", () => {
+                        visSingle(ret)
+                    });
+                    function visSingle(ret) {
+                        document.querySelector("#indhold").innerHTML = `
+                    <div class="visindhold">
+                    <img src= ${ret.billede} alt=${ret.navn}>
+                    <h2>${ret.navn}</h2> <br>
+  <h3>Pris: ${ret.pris},-</h3>
+                    <p>${ret.lang}</p> <br>
+
+                    </div>`;
+                        document.querySelector("#popup").style.display = "block";
+                        document.querySelector("#popup #luk").addEventListener("click", close);
+                    }
+                    function close() {
+                        document.querySelector("#popup").style.display = "none";
+                    }
+                }
+            })
+        }
+        document.querySelectorAll(".filter").forEach(elm => {
+            elm.addEventListener("click", filtrering);
+        })
+        function filtrering() {
+            filter = this.getAttribute("data-hold");
+            document.querySelector("h1").textContent = this.textContent;
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+            })
+            this.classList.add("valgt");
+            visRet();
+        }
+        start();
+    </script>
+</body>
+
+</html>

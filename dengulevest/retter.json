@@ -1,0 +1,270 @@
+[
+    {
+        "id": 10,
+        "kategori": "desserter",
+        "navn": "Brie en Crouchet",
+        "pris": 129,
+        "kort": "Den bløde smeltede ost giver en pikant smag til den søde bolle",
+        "lang": "Den bløde smeltede ost giver en pikant smag til den søde bolle, og i mange år, har vi kendt til virkningen af solbær syltetøj på en varm blød ost. Prøvt det!",
+        "billede": "brieencrouchet.jpg"
+},
+    {
+        "id": 12,
+        "kategori": "forretter",
+        "navn": "Cheese buns",
+        "pris": 149,
+        "lang": "Fabelagtig dessert, der himmelsk blander smagen af sødt med en lille kant af den salte ost.",
+        "billede": "cheesebuns.jpg"
+},
+
+    {
+        "id": 17,
+        "kategori": "desserter",
+        "navn": "Classic applepie",
+        "pris": 179,
+        "lang": "Denne franske klassiker overgår alt, hvad du tidligere har smagt af frugt tærte. Man forstår hvorfor Eva blev fristet af æblet i paradisets haave.",
+        "billede": "classicapplepie.jpg"
+},
+    {
+        "id": 19,
+        "kategori": "hovedretter",
+        "navn": "Coq au vin",
+        "pris": 69,
+        "lang": "Det franske landkøkken, når det er allerbedst. Den berømte Coq au vin. Selvfølgelig ekstra kraftfuld, da vi kun bruger kød fra fritgående dyr.",
+        "billede": "coqauvin.jpg"
+},
+    {
+        "id": 2,
+        "kategori": "desserter",
+        "navn": "Creme Brulee",
+        "pris": 149,
+        "lang": "Den fabelagtige fornemmelse der breder sig i munden synkront med den lille knasende lyd af sukkerlagen øverst der knækker, gør creme bruleen til en dessert, du aldrig glemmer",
+        "billede": "cremebrulee.jpg"
+},
+    {
+        "id": 21,
+        "kategori": "hovedretter",
+        "navn": "Confit de canard",
+        "pris": 189,
+        "lang": "Confit de canard - giver smørmørt kød som smager helt vidunderligt.",
+        "billede": "duckconfit.jpg"
+},
+    {
+        "id": 25,
+        "kategori": "forretter",
+        "navn": "Ål med rogn",
+        "pris": 179,
+        "lang": "Vores franske chef kok har selv sammensat, denne unikke smagsoplevelse, hvor ålens kraftige smag krydres op af rogn og pesto.",
+        "billede": "eal.jpg"
+},
+    {
+        "id": 34,
+        "kategori": "desserter",
+        "navn": "French Madeleine",
+        "pris": 129,
+        "lang": "Madeleine eller petite madeleine er en traditionel lille kage fra Commercy and Liverdun, ... Historien lyder at solkongens svigersøn opkaldte kagerne efter Madeline Paumier.",
+        "oprindelse": "Sibirien",
+        "billede": "frenchmadeleine.jpg"
+},
+    {
+        "id": 36,
+        "kategori": "forretter",
+        "navn": "Fransk salat",
+        "pris": 199,
+        "lang": "Det er så grønt, så naturligt og økologisk, at man slet ikke kan få nok",
+
+        "billede": "frenchsalat.jpg"
+},
+    {
+        "id": 38,
+        "kategori": "hovedretter",
+        "navn": "Frølår",
+        "pris": 139,
+
+        "lang": "Det franske køkken er ubetinget det bedste i verden til frølår. Her er de svagt stegte i smør med masser af hvidløg, og med et drys citron, vil du aldrig senere spise andet end frø.",
+
+        "billede": "frølår.jpg"
+},
+    {
+        "id": 41,
+        "kategori": "drikkevarer",
+        "navn": "Fransk Riesling",
+        "pris": 349,
+
+        "lang": "Fra det nordlige Frankrig kommer den perlende friske riesling vin, der gør sig glimrende til både de lyse forretter og desserten",
+
+        "billede": "germanriesling.jpg"
+},
+    {
+        "id": 42,
+        "kategori": "forretter",
+        "navn": "Pandekager med kaviar",
+        "pris": 159,
+        "lang": "Brændte pandekager med Bordyriske ørne-kaviar. Ørne laver kaviar på størrelse med peberkorn. Og de smager af kaviar. Ikke peber. Lækkert.",
+        "billede": "kaviarpandekager-sm.jpg"
+},
+
+    {
+        "id": 44,
+        "kategori": "drikkevarer",
+        "navn": "Hjemmepresset æblejuice",
+        "pris": 89,
+        "kort": "Kirgisisk roulade bestående af nødder og rødkål",
+        "lang": "Fra vores gård på Langeland kommer denne skønne juice af sæssonens æbler.",
+
+        "billede": "juice.jpg"
+},
+    {
+        "id": 45,
+        "kategori": "forretter",
+        "navn": "Løgsupper",
+        "pris": 149,
+
+        "lang": "Så delikat er denne supper, at flere gæster har betalt for en ekstra portion på stedet. Måske er du en af dem?",
+        "oprindelse": "Krim",
+        "billede": "løgsuppe.jpg"
+},
+    {
+        "id": 52,
+        "kategori": "drikkevarer",
+        "navn": "mint juice",
+        "pris": 89,
+
+        "lang": "Der findes kun en beskrivelse af denne sammensatte juice med mint: Prøv den.",
+
+        "billede": "mintjuice.jpg"
+},
+    {
+        "id": 54,
+        "kategori": "forretter",
+        "navn": "Mushroom Cappuchino",
+        "pris": 159,
+
+        "lang": "Kaffe og champignon?! JA! Det er en helt fantastisk forret, som du virkelig bør unde dig selv.",
+
+        "billede": "MushroomCappuccino.jpg"
+},
+
+    {
+        "id": 60,
+        "kategori": "forretter",
+        "navn": "Fransk omelet",
+        "pris": 19,
+
+        "lang": "Er en omelet ikke bare en omelet? Det spørgsmål vil du ikke stille, efter du har prøvet denne unikke og delikate franske version.",
+
+        "billede": "omelet.jpg"
+},
+    {
+        "id": 62,
+        "kategori": "desserter",
+        "navn": "Petit Four",
+        "pris": 139,
+
+        "lang": "Så bliver det ikke mere fransk. Små delikate bidder af de mest udsøgte franske kager.",
+
+        "billede": "petitfour.jpg"
+},
+    {
+        "id": 65,
+        "kategori": "desserter",
+        "navn": "Profiterole",
+        "pris": 149,
+
+        "lang": "Kage så englene synger. Serveret med vores egen flødeis.",
+
+        "billede": "profiterole.jpg"
+},
+
+    {
+        "id": 77,
+        "kategori": "hovedretter",
+        "navn": "Ratatouille",
+        "pris": 29,
+
+        "lang": "Den har simret flere timer, mens vores dygtige kokke har tilsat præcis de rigtige krydderier, og sørget for at grøntsagerne holder sig faste.",
+
+        "billede": "ratatouille.jpg"
+},
+    {
+        "id": 78,
+        "kategori": "drikkevarer",
+        "navn": "Cuveet pomserilet 1978",
+        "pris": 499,
+
+        "lang": "Luksuriø årgangsvin der egner sig specielt til det franske landkøkken",
+
+        "billede": "redwine1.jpg"
+},
+    {
+        "id": 83,
+        "kategori": "drikkevarer",
+        "navn": "Bourgonge Nouvee 2014",
+        "pris": 399,
+
+        "lang": "Lys og blomsterrig rødvin",
+
+        "billede": "redwine2.jpg"
+},
+    {
+        "id": 79,
+        "kategori": "forretter",
+        "navn": "Kammuslinger",
+        "pris": 149,
+
+        "lang": "Delikat forret der akkurat bringer smagen af sol sommer og strand til din mund",
+
+        "billede": "Scallops.jpg"
+},
+
+    {
+        "id": 11,
+        "kategori": "hovedretter",
+        "navn": "Sole Menuiere",
+        "pris": 229,
+
+        "lang": "Fantastisk kødret som kun det franske køkken kan levere det.",
+
+        "billede": "solemenuiere.jpg"
+},
+    {
+        "id": 11,
+        "kategori": "hovedretter",
+        "navn": "Forårs Lam",
+        "pris": 219,
+
+        "lang": "En ret der - og bør spises - hele året. Lammet har løbet på markerne ved vores gård på Langeland.",
+
+        "billede": "springlamb.jpg"
+},
+    {
+        "id": 13,
+        "kategori": "hovedretter",
+        "navn": "Snowfish",
+        "pris": 229,
+
+        "lang": "Denne skønne fiskeret er faktisk en vinterret, både i samgen og sit snehvide udseende",
+
+        "billede": "Snowfish.jpg"
+},
+    {
+        "id": 14,
+        "kategori": "hovedretter",
+        "navn": "Tenderloin",
+        "pris": 229,
+
+        "lang": "En af de bedste udskæringer af kød, du kan få. Med lækre grønt og sauce til.",
+
+        "billede": "tenderloin.jpg"
+},
+    {
+        "id": 15,
+        "kategori": "drikkevarer",
+        "navn": "Sauvignon Blanc Brulee 2017",
+        "pris": 229,
+
+        "lang": "Bemærkelsesværdigt sublim hvid vin, der trodser alle fordomme om Sauvignon blanc.",
+
+        "billede": "white1.jpg"
+}
+]
